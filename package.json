@@ -17,7 +17,8 @@
     "docs:build": "vuepress build docs",
     "docs:deploy": "npx aliyun-oss-deploy -p ./docs/.vuepress/dist",
     "publish": "cd ./theme-neptune && npm publish && cd ../ && npm update vuepress-theme-neptune",
-    "changelog": "auto-changelog --template changelog-template.hbs -p -u --commit-limit false"
+    "changelog": "auto-changelog --template changelog-template.hbs -p -u --commit-limit false",
+    "changelog-debug": "auto-changelog --template changelog-template.hbs -p --template json --output changelog-data.json"
   },
   "devDependencies": {
     "@vuepress/plugin-google-analytics": "^1.2.0",
