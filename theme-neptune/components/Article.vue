@@ -80,12 +80,6 @@
       width="200px"
       v-model="showToc"
     >
-      <v-toolbar flat>
-        <v-toolbar-title>
-          Content
-        </v-toolbar-title>
-      </v-toolbar>
-      <v-divider></v-divider>
       <Toc />
     </v-navigation-drawer>
   </v-main>
@@ -103,7 +97,7 @@ export default {
   computed: {
     tocClass() {
       return {
-        toc: this.showToc
+        article_toc: this.showToc
       }
     },
     tags() {

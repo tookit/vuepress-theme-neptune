@@ -1,4 +1,5 @@
-@import '~vuetify/src/styles/styles.sass'
+
+@import '~vuetify/src/styles/main.sass'
 // vuetify
 $body-font-family : 'Roboto', sans-serif
 $font-size-root : 14px
@@ -6,16 +7,38 @@ $line-height-root : 1.5
 
 @import './code'
 
+.v-list-item--active
+  border-right: 2px solid rgba(0, 0, 0, 0.75)
+
 .nep
   &-header
   &-sidebar
   &-footer
     z-index: 4
 
-.toc
+.article_toc
   padding-right: 200px !important
 
 .article__content
+  .toc
+    .toc_list
+      padding: 0
+    .v-list-item:not(.v-list-item--active):not(.v-list-item--disabled)
+      color: #616161 !important
+    .toc_list__item
+      -moz-osx-font-smoothing: grayscale
+      -webkit-font-smoothing: antialiased
+      font-size: 0.875rem
+      line-height: 1.5
+      font-weight: 400
+      letter-spacing: 0.0178571429em
+      color: #616161 !important
+      width: 100%
+      border-left: 2px solid rgba(0, 0, 0, 0.30)
+      text-decoration: none
+    .v-list-item--active
+      color: rgba(0, 0, 0, 0.75) !important
+      border-left: 2px solid rgba(0, 0, 0, 0.75)
   #vcomments
     margin-top: $spacer * 10
   h1
@@ -63,7 +86,8 @@ $line-height-root : 1.5
 
 .custom-block.tip
   background-color: #f3f5f7
-  border-color: #42b983
+  // border-color: $colors['base.red']
+  // @include background-color('black')
   & .custom-block-title
     color: #42b983
 

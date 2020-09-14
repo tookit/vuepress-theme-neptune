@@ -1,5 +1,5 @@
 <template>
-  <v-app class="nep">
+  <v-app dark class="nep">
     <Header @toogle:sidebar="handleToggleSidebar" class="nep-header" />
     <Sidebar ref="sidebar" v-if="element !== 'Home'" class="nep-sidebar" />
     <ClientOnly>

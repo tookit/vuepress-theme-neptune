@@ -40,6 +40,7 @@ import Vuetify, {
   VSpacer,
   VDivider
 } from 'vuetify/lib'
+import colors from 'vuetify/lib/util/colors'
 import './style/theme.sass'
 import { Ripple, Scroll } from 'vuetify/lib/directives'
 import zhHans from 'vuetify/es5/locale/zh-Hans'
@@ -104,6 +105,19 @@ export default ({
     lang: {
       locales: { zhHans, en },
       current: 'en'
+    },
+    theme: {
+      themes: {
+        light: {
+          primary: colors.grey.darken4,
+          secondary: colors.grey.darken1,
+          accent: colors.shades.black,
+          error: colors.red.accent3
+        },
+        dark: {
+          primary: colors.blue.lighten3
+        }
+      }
     }
   })
 
