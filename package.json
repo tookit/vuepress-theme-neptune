@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tookit's Personal Blog",
   "author": "tookit",
   "license": "MIT",
@@ -17,8 +17,8 @@
     "docs:build": "vuepress build docs",
     "docs:deploy": "npx aliyun-oss-deploy -p ./docs/.vuepress/dist",
     "publish": "cd ./theme-neptune && npm publish && cd ../ && npm update vuepress-theme-neptune",
-    "changelog": "auto-changelog --template changelog-template.hbs -p -u --commit-limit false",
-    "changelog-debug": "auto-changelog --template changelog-template.hbs -p --template json --output changelog-data.json"
+    "changelog": "auto-changelog --template changelog-template.hbs -u --commit-limit false --release-summary --tag-prefix v",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "devDependencies": {
     "@vuepress/plugin-google-analytics": "^1.2.0",
