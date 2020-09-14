@@ -14,36 +14,7 @@ module.exports = {
         { text: 'Vue', link: '/zh/_post/vue' }
       ]
     },
-    sidebar: {
-      '/': [
-        {
-          header: 'Categories'
-        },
-        {
-          text: 'Vue',
-          icon: 'mdi-vuejs',
-          path: '/posts/categories/vue',
-          to: '/posts/categories/vue.html'
-        }
-      ],
-      '/zh/': [
-        {
-          header: '分类'
-        }
-        // {
-        //   text: 'Blog',
-        //   path: '/blog/',
-        //   to: '/blog/',
-        //   children: [
-        //     {
-        //       text: 'Vuepress theme with vuetify',
-        //       path: '/build-a-vuepress-theme-with-vuetify',
-        //       to: 'build-a-vuepress-theme-with-vuetify'
-        //     }
-        //   ]
-        // }
-      ]
-    },
+    sidebar: {},
     valine: {
       appId: 'dFNEgQoCyMKnaV5FIR137JsC-gzGzoHsz',
       appKey: '38ehraSP02NclWAHpTIpVl77'

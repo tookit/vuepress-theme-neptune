@@ -42,9 +42,9 @@ export default {
     },
     siteTitle() {
       return this.$site.title
-    },
+    }
   },
-  created() {},
+  created() {}
 }
 </script>
 

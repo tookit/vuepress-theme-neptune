@@ -6,12 +6,7 @@
       </v-btn>
     </template>
     <v-list dense light>
-      <v-list-item
-        v-for="(language, path) in locales"
-        :key="language.lang"
-        avatar
-        @click="handleChanggeLocale(language, path)"
-      >
+      <v-list-item v-for="(language, path) in locales" :key="language.lang" @click="handleChanggeLocale(language, path)">
         <v-list-item-avatar tile size="24px" class="mr-2">
           <v-img :src="language.flag" width="24px" />
         </v-list-item-avatar>
@@ -26,19 +21,19 @@ export default {
   props: {
     locales: Object,
   },
-  data() {
+  data () {
     return {}
   },
   computed: {
-    currentLanguage() {
+    currentLanguage () {
       return this.locales[this.$localePath]
-    },
+    }
   },
   methods: {
-    handleChanggeLocale(lang, path) {
+    handleChanggeLocale (lang, path) {
       this.$vuetify.lang.current = lang.lang
       this.$router.push({ path: path })
-    },
-  },
+    }
+  }
 }
 </script>

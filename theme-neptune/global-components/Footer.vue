@@ -1,9 +1,9 @@
 <template>
-  <v-footer height="auto" app>
+  <v-footer height="auto" color="black lighten-1">
     <v-container>
       <v-row>
-        <v-col>
-          <div>&copy; {{ new Date().getFullYear() }}</div>
+        <v-col cols="12">
+          <div>Tookit&copy; {{ new Date().getFullYear() }}</div>
         </v-col>
       </v-row>
     </v-container>
@@ -13,5 +13,3 @@
 <script>
 export default {}
 </script>
-
-<style></style>

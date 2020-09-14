@@ -14,14 +14,18 @@
 <script>
 export default {
   components: {},
-  props: {
-    showDrawer: Boolean,
-  },
+  props: {},
   data() {
-    return {}
+    return {
+      showDrawer: true
+    }
   },
   computed: {},
-  methods: {},
-  created() {},
+  methods: {
+    toogleSidebar() {
+      this.showDrawer != this.showDrawer
+    }
+  },
+  created() {}
 }
 </script>

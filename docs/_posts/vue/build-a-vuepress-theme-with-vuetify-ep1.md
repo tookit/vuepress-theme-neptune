@@ -3,6 +3,11 @@ title: 'Build a vuepress theme with vuetify'
 lang: en-US
 category: Vue
 layout: Article
+tags:
+- vue
+- vuepress
+- vuetify
+- theme
 date: '2019-12-12'
 ---
 

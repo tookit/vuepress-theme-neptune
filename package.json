@@ -5,9 +5,13 @@
   "author": "tookit",
   "license": "MIT",
   "dependencies": {
-    "vuepress": "1.5.0",
+    "vuepress": "1.5.2",
     "vuepress-theme-neptune": "1.0.0"
   },
+  "private": true,
+  "workspaces": [
+    "theme-neptune"
+  ],
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",

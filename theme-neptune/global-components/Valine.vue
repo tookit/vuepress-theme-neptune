@@ -10,8 +10,8 @@ export default {
     new Valine({
       el: '#vcomments',
       appId: valine.appId,
-      appKey: valine.appKey,
+      appKey: valine.appKey
     })
-  },
+  }
 }
 </script>
