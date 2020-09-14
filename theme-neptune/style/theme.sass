@@ -1,13 +1,109 @@
 @import '~vuetify/src/styles/styles.sass'
+// vuetify
+$body-font-family : 'Roboto', sans-serif
+$font-size-root : 14px
+$line-height-root : 1.5
+
 @import './code'
+
+.nep
+  &-header
+  &-sidebar
+  &-footer
+    z-index: 4
 
 .toc
   padding-right: 200px !important
+
 .article__content
+  #vcomments
+    margin-top: $spacer * 10
   h1
-    padding: $spacer*10  $spacer *3
+    padding: $spacer*3  $spacer *3
   h2
     padding: $spacer*3 0
     margin-bottom: $spacer*3
     .header-anchor
       display: none
+  table
+    min-width: 100%
+    border: 0
+    border-collapse: collapse
+    table-layout: fixed
+    white-space: normal
+    th
+      color: #616161
+      background-color: #fafafa
+      font-weight: 500
+      padding: $spacer*2
+      text-align: left
+    td
+      -moz-osx-font-smoothing: grayscale
+      -webkit-font-smoothing: antialiased
+      font-size: .875rem
+      line-height: 1.5
+      font-weight: 400
+      letter-spacing: .03125em
+      text-decoration: inherit
+      text-transform: inherit
+      padding: $spacer*2
+      letter-spacing: normal
+      border: 1px solid #eee
+
+// custom block
+.custom-block
+  &-title
+    font-weight: 600
+    margin: $spacer 0
+.custom-block.danger,.custom-block.tip,.custom-block.warning
+  padding: .1rem 1.5rem
+  border-left-width: .5rem
+  border-left-style: solid
+  margin: 1rem 0
+
+.custom-block.tip
+  background-color: #f3f5f7
+  border-color: #42b983
+  & .custom-block-title
+    color: #42b983
+
+.custom-block.warning
+  background-color: rgba(255,229,100,.3)
+  border-color: #e7c000
+  color: #6b5900
+
+  & .custom-block-title
+    color: #b29400
+
+  & a
+    color: #2c3e50
+
+.custom-block.danger
+  background-color: #ffe6e6
+  border-color: #c00
+  color: #4d0000
+
+  & .custom-block-title
+    color: #900
+
+  & a
+    color: #2c3e50
+
+.custom-block.details
+  display: block
+  position: relative
+  border-radius: 2px
+  margin: 1.6em 0
+  padding: 1.6em
+  background-color: #eee
+
+  & h4
+    margin-top: 0
+
+  & figure:last-child,.custom-block.details p:last-child
+    margin-bottom: 0
+    padding-bottom: 0
+
+  & summary
+    outline: none
+    cursor: pointer

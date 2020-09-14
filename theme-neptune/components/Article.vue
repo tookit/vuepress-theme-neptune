@@ -2,7 +2,11 @@
   <v-main class="article__content" :class="tocClass">
     <v-sheet color="grey darken-4" dark class="py-10 px-5">
       <v-toolbar extended dark tag="div" tile flat color="grey darken-4">
-        <v-toolbar-title>{{ $page.title }}</v-toolbar-title>
+        <v-toolbar-title>
+          <h2>
+            {{ $page.title }}
+          </h2>
+        </v-toolbar-title>
         <v-spacer />
         <v-btn icon>
           <v-icon>mdi-arrow-left</v-icon>
@@ -24,12 +28,15 @@
           <v-card tile flat>
             <v-card-text>
               <Content custom class="article content" />
-              <valine />
+              <valine class="article__comments" />
             </v-card-text>
           </v-card>
         </v-col>
         <!-- Related article -->
-        <v-col cols="12"><h3>Up next</h3></v-col>
+        <v-col cols="12"
+          ><h3 class="mb-2">Up next</h3>
+          <v-divider />
+        </v-col>
         <v-col cols="6" v-for="item in related" :key="item.key">
           <template v-if="item.frontmatter.image">
             <v-card tile :to="item.path">

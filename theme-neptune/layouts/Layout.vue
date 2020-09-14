@@ -1,12 +1,12 @@
 <template>
-  <v-app class="theme">
-    <Header @toogle:sidebar="handleToggleSidebar" />
-    <Sidebar ref="sidebar" v-if="element !== 'Home'" />
+  <v-app class="nep">
+    <Header @toogle:sidebar="handleToggleSidebar" class="nep-header" />
+    <Sidebar ref="sidebar" v-if="element !== 'Home'" class="nep-sidebar" />
     <ClientOnly>
       <component :is="element"></component>
     </ClientOnly>
 
-    <Footer />
+    <Footer class="nep-footer" />
   </v-app>
 </template>
 

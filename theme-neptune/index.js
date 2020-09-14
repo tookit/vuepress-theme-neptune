@@ -7,12 +7,12 @@ module.exports = (options, ctx) => {
   const isAlgoliaSearch =
     themeConfig.algolia ||
     Object.keys((siteConfig.locales && themeConfig.locales) || {}).some(
-      base => themeConfig.locales[base].algolia
+      (base) => themeConfig.locales[base].algolia
     )
 
   return {
-    configureWebpack: config => {},
-    chainWebpack: config => {
+    configureWebpack: (config) => {},
+    chainWebpack: (config) => {
       config.module
         .rule('sass')
         .oneOf('normal')
@@ -22,8 +22,8 @@ module.exports = (options, ctx) => {
           implementation: require('sass'),
           sassOptions: {
             fiber: require('fibers'),
-            indentedSyntax: true, // optional
-          },
+            indentedSyntax: true // optional
+          }
         })
         .end()
     },
@@ -32,7 +32,7 @@ module.exports = (options, ctx) => {
         '@AlgoliaSearchBox': isAlgoliaSearch
           ? path.resolve(__dirname, 'components/AlgoliaSearchBox.vue')
           : path.resolve(__dirname, 'noopModule.js'),
-        '@docs': `${sourceDir}${sep}.vuepress${sep}styles`,
+        '@docs': `${sourceDir}${sep}.vuepress${sep}styles`
       }
     },
     plugins: [
@@ -44,39 +44,39 @@ module.exports = (options, ctx) => {
         {
           type: 'tip',
           defaultTitle: {
-            '/': 'TIP',
-          },
-        },
+            '/': 'Tip'
+          }
+        }
       ],
       [
-        'container',
+        'vuepress-plugin-container',
         {
           type: 'warning',
           defaultTitle: {
-            '/': 'WARNING',
-          },
-        },
+            '/': 'WARNING'
+          }
+        }
       ],
       [
-        'container',
+        'vuepress-plugin-container',
         {
           type: 'danger',
           defaultTitle: {
-            '/': 'WARNING',
-          },
-        },
+            '/': 'WARNING'
+          }
+        }
       ],
       [
-        'container',
+        'vuepress-plugin-container',
         {
           type: 'details',
-          before: info =>
-            `<details class="custom-block details">${
+          before: (info) =>
+            `<v-alert class="custom-block details">${
               info ? `<summary>${info}</summary>` : ''
             }\n`,
-          after: () => '</details>\n',
-        },
-      ],
-    ],
+          after: () => '</alert>\n'
+        }
+      ]
+    ]
   }
 }
