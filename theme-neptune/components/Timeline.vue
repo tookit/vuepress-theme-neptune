@@ -31,13 +31,9 @@
               <v-timeline
                 dense
                 clipped
-                v-for="item in $page.frontmatter.changelogs"
-                :key="item"
+                v-for="(item, key) in changelogs"
+                :key="key"
               >
-                <!-- <v-timeline-item class="mb-6">
-                  <span>TODAY</span>
-                </v-timeline-item> -->
-
                 <v-timeline-item
                   class="mb-4"
                   color="grey"
@@ -45,7 +41,12 @@
                   small
                 >
                   <v-row justify="space-between">
-                    <v-col cols="7">{{ item }}.</v-col>
+                    <v-col cols="7">
+                      <v-chip small color="primary" label outlined>
+                        {{ item.version }}
+                      </v-chip>
+                      <span class="ml-2">{{ item.text }}.</span>
+                    </v-col>
                   </v-row>
                 </v-timeline-item>
               </v-timeline>
@@ -62,22 +63,23 @@
 export default {
   name: 'Timeline',
   data() {
-    return {}
+    return {
+      changelogs: [
+        {
+          version: '1.0.0',
+          text: 'Create vuepress theme with vuetify'
+        },
+        {
+          version: '1.1.0',
+          text: 'Publish theme'
+        }
+      ]
+    }
   },
   computed: {
     tags() {
       const { frontmatter } = this.$page
       return frontmatter.tags || ['Default']
-    },
-    related() {
-      return this.$site.pages.filter((page) => {
-        const { frontmatter } = page
-        return (
-          frontmatter.category === this.$frontmatter.category &&
-          frontmatter.layout !== 'Category' &&
-          page.key !== this.$page.key
-        )
-      })
     }
   },
   methods: {}

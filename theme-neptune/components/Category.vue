@@ -95,7 +95,6 @@ export default {
       this.showDrawer = !this.showDrawer
     },
     computePostImage(frontmatter) {
-      console.log('here')
       return frontmatter.image || '/img/mock.png'
     }
   },

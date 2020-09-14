@@ -2,20 +2,15 @@
 category: Laravel
 title: Create a rest api by laravel 8
 layout: Article
-image: https://lh3.googleusercontent.com/DAeLGsE71e2dNbcIr51s4ZGr-Z_CnrhW-wa50u8H2vO_jJ6zYovMU-RIR7bgKYz4Q3ru_L5qmp6rHfThDj9mktyZvGwTM6i3LA5dAg=w760-h360
+date: "2020-09-12"
 ---
 
 
 ## Init Project
 
-``` javascript{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
+``` bash
+composer create-project laravel/laravel vma-api
+
 ```
 
 ## Create database vma and update env
