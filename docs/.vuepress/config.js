@@ -7,12 +7,12 @@ module.exports = {
     nav: {
       '/': [
         { text: 'Home', link: '/' },
-        { text: 'Vue', link: '/_posts/vue' },
+        { text: 'Vue', link: '/_posts/vue/' },
         { text: 'Laravel', link: '/_posts/laravel' }
       ],
       '/zh/': [
         { text: '首页', link: '/zh' },
-        { text: 'Vue', link: '/zh/_post/vue' }
+        { text: 'Vue', link: '/zh/_post/vue/' }
       ]
     },
     sidebar: {},
