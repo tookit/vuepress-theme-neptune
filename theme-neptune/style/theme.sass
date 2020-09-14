@@ -4,6 +4,8 @@
 $body-font-family : 'Roboto', sans-serif
 $font-size-root : 14px
 $line-height-root : 1.5
+//
+$primary-color: '#424242'  
 
 @import './code'
 
@@ -86,10 +88,9 @@ $line-height-root : 1.5
 
 .custom-block.tip
   background-color: #f3f5f7
-  // border-color: $colors['base.red']
-  // @include background-color('black')
+  border-color: $primary-color
   & .custom-block-title
-    color: #42b983
+    color: $primary-color
 
 .custom-block.warning
   background-color: rgba(255,229,100,.3)
