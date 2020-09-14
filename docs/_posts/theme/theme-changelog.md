@@ -9,5 +9,6 @@ tags:
 - Theme
 - Vuepress
 - Timeline
----
-
+changelogs:
+- 1.0.0 -- Integrated vuepress with vuetify
+    

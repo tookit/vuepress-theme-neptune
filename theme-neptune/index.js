@@ -65,17 +65,6 @@ module.exports = (options, ctx) => {
             '/': 'WARNING'
           }
         }
-      ],
-      [
-        'vuepress-plugin-container',
-        {
-          type: 'details',
-          before: (info) =>
-            `<v-alert class="custom-block details">${
-              info ? `<summary>${info}</summary>` : ''
-            }\n`,
-          after: () => '</alert>\n'
-        }
       ]
     ]
   }

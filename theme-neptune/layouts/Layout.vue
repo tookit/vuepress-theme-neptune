@@ -14,6 +14,7 @@
 import Home from '@theme/components/Home'
 import Article from '@theme/components/Article'
 import Category from '@theme/components/Category'
+import Timeline from '@theme/components/Timeline'
 export default {
   data() {
     return {
@@ -21,7 +22,7 @@ export default {
       showToc: true
     }
   },
-  components: { Home, Article, Category },
+  components: { Home, Article, Category, Timeline },
   computed: {
     element() {
       const { layout, home } = this.$page.frontmatter
