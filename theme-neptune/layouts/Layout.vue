@@ -1,31 +1,13 @@
 <template>
-  <div class="theme__container" :class="pageClasses">
-    <v-app class="theme">
-      <Header @toogle:sidebar="handleToggleSidebar" />
-      <Sidebar ref="sidebar" v-if="element !== 'Home'" />
-      <ClientOnly>
-        <component :is="element"></component>
-      </ClientOnly>
-    </v-app>
-    <v-navigation-drawer
-      v-if="element === 'Article'"
-      right
-      fixed
-      clipped
-      width="200px"
-      style="margin-top:64px"
-      v-model="showToc"
-    >
-      <v-toolbar flat>
-        <v-toolbar-title>
-          Content
-        </v-toolbar-title>
-      </v-toolbar>
-      <v-divider></v-divider>
-      <Toc />
-    </v-navigation-drawer>
+  <v-app class="theme">
+    <Header @toogle:sidebar="handleToggleSidebar" />
+    <Sidebar ref="sidebar" v-if="element !== 'Home'" />
+    <ClientOnly>
+      <component :is="element"></component>
+    </ClientOnly>
+
     <Footer />
-  </div>
+  </v-app>
 </template>
 
 <script>
