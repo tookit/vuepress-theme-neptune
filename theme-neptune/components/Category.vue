@@ -1,5 +1,5 @@
 <template>
-  <v-main class="category--content">
+  <v-main class="category__content">
     <v-sheet color="grey darken-4" dark class="py-10 px-5">
       <v-toolbar dark tag="div" tile flat color="grey darken-4">
         <v-toolbar-title>{{ $page.title }}</v-toolbar-title>
@@ -23,9 +23,13 @@
       <v-row>
         <template v-if="viewMode === 'list'">
           <v-col cols="12">
-            <v-list three-line>
+            <v-list class="category_list" three-line>
               <template v-for="item in posts">
-                <v-list-item :key="item.key" :to="item.path">
+                <v-list-item
+                  class="category_list__item"
+                  :key="item.key"
+                  :to="item.path"
+                >
                   <v-list-item-avatar tile color="grey" size="80">
                   </v-list-item-avatar>
                   <v-list-item-content>
@@ -33,9 +37,21 @@
                       {{ item.title }}
                     </v-list-item-title>
                     <v-list-item-subtitle>
-                      {{ item.frontmatter.date }}
+                      <v-chip
+                        color="primary"
+                        class="mr-2"
+                        label
+                        outlined
+                        v-for="tag in item.frontmatter.tags"
+                        :key="tag"
+                      >
+                        {{ tag }}
+                      </v-chip>
                     </v-list-item-subtitle>
                   </v-list-item-content>
+                  <v-list-item-action>
+                    {{ item.frontmatter.date }}
+                  </v-list-item-action>
                 </v-list-item>
               </template>
             </v-list>
@@ -49,18 +65,33 @@
             :key="post.key"
           >
             <v-card ripple :to="post.path" tile>
-              <v-img :src="computePostImage(post.frontmatter)" />
+              <v-img :src="computePostImage(post.frontmatter)"> </v-img>
               <v-card-text>
-                <v-list-item>
-                  <v-list-item-content>
-                    <v-list-item-title>
-                      {{ post.title }}
-                    </v-list-item-title>
-                    <v-list-item-subtitle>
-                      {{ post.frontmatter.date }}
-                    </v-list-item-subtitle>
-                  </v-list-item-content>
-                </v-list-item>
+                <v-list two-line>
+                  <v-list-item>
+                    <v-list-item-content>
+                      <v-list-item-title>
+                        {{ post.title }}
+                      </v-list-item-title>
+                      <v-list-item-subtitle>
+                        <div class="mb-2 caption">
+                          {{ post.frontmatter.date }}
+                        </div>
+                        <v-chip
+                          color="primary"
+                          class="mr-2"
+                          label
+                          small
+                          outlined
+                          v-for="tag in post.frontmatter.tags"
+                          :key="tag"
+                        >
+                          {{ tag }}
+                        </v-chip>
+                      </v-list-item-subtitle>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-list>
               </v-card-text>
             </v-card>
           </v-col>
