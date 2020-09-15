@@ -71,17 +71,33 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-navigation-drawer
-      style="padding-top: 64px"
-      right
-      fixed
-      permanent
-      clipped
-      width="200px"
-      v-model="showToc"
-    >
-      <Toc />
-    </v-navigation-drawer>
+    <template v-if="!showToc">
+      <v-btn
+        small
+        fab
+        dark
+        fixed
+        tile
+        right="right"
+        class="btn_toc"
+        color="primary"
+        @click="showToc = true"
+      >
+        <v-icon>mdi-view-list</v-icon>
+      </v-btn>
+    </template>
+    <template v-else>
+      <v-navigation-drawer
+        style="padding-top: 64px"
+        right
+        fixed
+        clipped
+        width="200px"
+        v-model="showToc"
+      >
+        <Toc />
+      </v-navigation-drawer>
+    </template>
   </v-main>
 </template>
 
