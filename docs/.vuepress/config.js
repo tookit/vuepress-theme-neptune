@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Tookit',
-  description: "📦 🎨 Tookit's blog",
+  title: 'Vuepress theme neptune',
+  description: 'A nice dark vuepress theme made with vuetify 2.0',
   // theme: 'vuepress-theme-neptune',
   theme: require.resolve('../../theme-neptune'), // 使用本地主题
   themeConfig: {
@@ -25,15 +25,15 @@ module.exports = {
     '/': {
       lang: 'en',
       name: 'English',
-      title: 'Tookit',
-      description: 'Tookit personal blog',
+      title: 'Vuepress theme neptune',
+      description: 'A nice dark vuepress theme made with vuetify 2.0',
       flag: '/img/en.png'
     },
     '/zh/': {
       lang: 'zh',
       name: '简体中文',
-      title: 'Tookit',
-      description: 'Tookit 个人站点',
+      title: 'vupresss黑色主题',
+      description: '一个整洁简单的深色vuepress主题',
       flag: '/img/zh.png'
     }
   },
