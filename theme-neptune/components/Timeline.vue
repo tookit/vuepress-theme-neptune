@@ -27,12 +27,11 @@
         <v-col cols="12">
           <v-card tile flat>
             <v-card-text>
-              <Content custom class="content" />
               <v-timeline
                 dense
                 clipped
                 v-for="(item, key) in changelogs"
-                :key="key"
+                :key="$lang + key"
               >
                 <v-timeline-item
                   class="mb-4"

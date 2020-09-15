@@ -33,8 +33,8 @@
           </v-card>
         </v-col>
         <!-- Related article -->
-        <v-col cols="12"
-          ><h3 class="mb-2">Up next</h3>
+        <v-col cols="12">
+          <h3 class="mb-2">Up next</h3>
           <v-divider />
         </v-col>
         <v-col cols="6" v-for="item in related" :key="item.key">

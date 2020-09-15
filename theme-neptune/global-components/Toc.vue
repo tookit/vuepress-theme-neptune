@@ -1,6 +1,6 @@
 <template>
   <div class="toc" v-on="$listeners">
-    <v-subheader>Content</v-subheader>
+    <v-subheader>{{ $vuetify.lang.t('$vuetify.toc.title') }}</v-subheader>
     <v-divider />
     <slot name="top" />
     <v-list class="toc_list">

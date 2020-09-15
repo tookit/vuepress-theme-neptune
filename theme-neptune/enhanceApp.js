@@ -45,8 +45,8 @@ import Vuetify, {
 import colors from 'vuetify/lib/util/colors'
 import './style/theme.sass'
 import { Ripple, Scroll } from 'vuetify/lib/directives'
-import zhHans from 'vuetify/es5/locale/zh-Hans'
-import en from 'vuetify/es5/locale/en'
+import zh from '@theme/locale/zh-Hans'
+import en from '@theme/locale/en'
 import postsMixin from '@theme/mixins/posts'
 
 export default ({
@@ -108,7 +108,7 @@ export default ({
   })
   options.vuetify = new Vuetify({
     lang: {
-      locales: { zhHans, en },
+      locales: { zh, en },
       current: 'en'
     },
     theme: {
