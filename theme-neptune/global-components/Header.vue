@@ -11,8 +11,8 @@
         width="24px"
       />
     </router-link>
-    <v-toolbar-title style="width: 300px" class="ml-0 pl-3">
-      <span class="hidden-sm-and-down">{{ siteTitle }}</span>
+    <v-toolbar-title class="ml-0 pl-3">
+      <span>{{ siteTitle }}</span>
     </v-toolbar-title>
     <v-spacer />
     <v-toolbar-items class="hidden-sm-and-down">

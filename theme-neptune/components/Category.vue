@@ -37,9 +37,12 @@
                       {{ item.title }}
                     </v-list-item-title>
                     <v-list-item-subtitle>
+                      <span class="caption hidden-md-and-up">{{
+                        item.frontmatter.date
+                      }}</span>
                       <v-chip
                         color="primary"
-                        class="mr-2"
+                        class="mr-2 hidden-xs-only"
                         label
                         outlined
                         v-for="tag in item.frontmatter.tags"
@@ -49,7 +52,7 @@
                       </v-chip>
                     </v-list-item-subtitle>
                   </v-list-item-content>
-                  <v-list-item-action>
+                  <v-list-item-action class="hidden-xs-only">
                     {{ item.frontmatter.date }}
                   </v-list-item-action>
                 </v-list-item>
@@ -59,7 +62,9 @@
         </template>
         <template v-else>
           <v-col
-            cols="4"
+            :cols="12"
+            :lg="4"
+            :sm="12"
             v-if="posts.length"
             v-for="post in posts"
             :key="post.key"
