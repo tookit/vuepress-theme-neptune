@@ -1,8 +1,8 @@
 ---
 category: Laravel
 title: Create a rest api by laravel 8
+lang: zh
 layout: Article
-lang: en-US
 date: "2020-09-12"
 ---
 

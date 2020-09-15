@@ -1,5 +1,5 @@
 ---
 layout: category
+lang: zh
 title: category
-lang: en-US
 ---

@@ -15,7 +15,7 @@
       <span>{{ siteTitle }}</span>
     </v-toolbar-title>
     <v-spacer />
-    <v-toolbar-items class="hidden-sm-and-down">
+    <v-toolbar-items class="hidden-xs-only">
       <v-btn icon>
         <v-icon>mdi-github</v-icon>
       </v-btn>

@@ -1,9 +1,8 @@
 ---
 title: 'Create a simple websocket server by rust'
-lang: en-US
+lang: zh
 category: Rust
 layout: Article
-tags:
-- Rust
+tag:
 date: '2019-12-12'
 ---

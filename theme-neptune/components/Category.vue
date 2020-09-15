@@ -121,7 +121,8 @@ export default {
         const { frontmatter } = page
         return (
           frontmatter.category === this.$frontmatter.category &&
-          frontmatter.layout !== 'Category'
+          frontmatter.layout !== 'Category' &&
+          this.$lang === frontmatter.lang
         )
       })
     }
