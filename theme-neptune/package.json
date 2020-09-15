@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-neptune",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Neptune theme for VuePress。",
   "author": {
     "name": "Tookit (Michael Wang)"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xugaoyi/vuepress-theme-neptune.git"
+    "url": "git+https://github.com/tookit/vuepress-theme-neptune.git"
   },
   "main": "index.js",
   "dependencies": {
