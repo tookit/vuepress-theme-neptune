@@ -12,7 +12,7 @@ module.exports = {
       ],
       '/zh/': [
         { text: '首页', link: '/zh' },
-        { text: 'Vue', link: '/zh/_post/vue/' }
+        { text: 'Vue', link: '/zh/_posts/vue/' }
       ]
     },
     sidebar: {},
