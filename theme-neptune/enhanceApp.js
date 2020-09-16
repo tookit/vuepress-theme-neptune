@@ -38,6 +38,7 @@ import Vuetify, {
   VTimeline,
   VTimelineItem,
   //
+  VFabTransition,
   VSubheader,
   VSpacer,
   VDivider
@@ -97,6 +98,7 @@ export default ({
       VTimeline,
       VTimelineItem,
       //
+      VFabTransition,
       VSubheader,
       VSpacer,
       VDivider

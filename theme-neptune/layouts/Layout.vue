@@ -7,6 +7,7 @@
     </ClientOnly>
 
     <Footer class="nep-footer" />
+    <Fab />
   </v-app>
 </template>
 
@@ -16,7 +17,7 @@ import Article from '@theme/components/Article'
 import Category from '@theme/components/Category'
 import Timeline from '@theme/components/Timeline'
 export default {
-  data() {
+  data () {
     return {
       showDrawer: true,
       showToc: true
@@ -24,11 +25,11 @@ export default {
   },
   components: { Home, Article, Category, Timeline },
   computed: {
-    element() {
+    element () {
       const { layout, home } = this.$page.frontmatter
       return home === true ? 'Home' : layout || 'Article'
     },
-    pageClasses() {
+    pageClasses () {
       const userPageClass = this.$page.frontmatter.pageClass
       return [
         {
@@ -40,15 +41,15 @@ export default {
     }
   },
   methods: {
-    handleToggleSidebar() {
+    handleToggleSidebar () {
       const sidebar = this.$refs.sidebar
       sidebar.showDrawer = !sidebar.showDrawer
     }
   },
-  mounted() {
+  mounted () {
     this.$vuetify.lang.current = this.$lang
   },
-  created() {
+  created () {
     if (this.$ssrContext) {
       this.$ssrContext.title = this.$title
       this.$ssrContext.lang = this.$lang
