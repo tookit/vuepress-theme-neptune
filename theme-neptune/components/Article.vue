@@ -33,11 +33,11 @@
           </v-card>
         </v-col>
         <!-- Related article -->
-        <v-col cols="12">
+        <v-col :cols="12">
           <h3 class="mb-2">Up next</h3>
           <v-divider />
         </v-col>
-        <v-col cols="6" v-for="item in related" :key="item.key">
+        <v-col :lg="6" :cols="12" v-for="item in related" :key="item.key">
           <template v-if="item.frontmatter.image">
             <v-card tile :to="item.path">
               <v-img :src="item.frontmatter.image" />
@@ -72,29 +72,12 @@
       </v-row>
     </v-container>
     <template v-if="!showToc">
-      <v-btn
-        small
-        fab
-        dark
-        fixed
-        tile
-        right="right"
-        class="btn_toc"
-        color="primary"
-        @click="showToc = true"
-      >
+      <v-btn small fab dark fixed tile right="right" class="btn_toc" color="primary" @click="showToc = true">
         <v-icon>mdi-view-list</v-icon>
       </v-btn>
     </template>
     <template v-else>
-      <v-navigation-drawer
-        style="padding-top: 64px"
-        right
-        fixed
-        clipped
-        width="200px"
-        v-model="showToc"
-      >
+      <v-navigation-drawer style="padding-top: 64px" right fixed clipped width="200px" v-model="showToc">
         <Toc />
       </v-navigation-drawer>
     </template>
@@ -104,23 +87,23 @@
 <script>
 export default {
   name: 'Article',
-  data() {
+  data () {
     return {
       showDrawer: true,
       showToc: true
     }
   },
   computed: {
-    tocClass() {
+    tocClass () {
       return {
-        article_toc: this.showToc
+        article_toc: this.showToc && this.$vuetify.breakpoint.lgAndUp
       }
     },
-    tags() {
+    tags () {
       const { frontmatter } = this.$page
       return frontmatter.tags || ['Default']
     },
-    related() {
+    related () {
       return this.$site.pages.filter((page) => {
         const { frontmatter } = page
         return (
@@ -132,7 +115,7 @@ export default {
     }
   },
   methods: {
-    handleToggleSideBar() {
+    handleToggleSideBar () {
       this.showDrawer = !this.showDrawer
     }
   }
