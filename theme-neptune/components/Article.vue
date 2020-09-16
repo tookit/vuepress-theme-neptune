@@ -90,7 +90,7 @@ export default {
   data () {
     return {
       showDrawer: true,
-      showToc: true
+      showToc: this.$vuetify.breakpoint.lgAndUp ? true : false
     }
   },
   computed: {

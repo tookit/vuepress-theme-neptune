@@ -3,6 +3,7 @@ module.exports = {
   description: 'A nice dark vuepress theme made with vuetify 2.0',
   // theme: 'vuepress-theme-neptune',
   theme: require.resolve('../../theme-neptune'), // 使用本地主题
+
   themeConfig: {
     nav: {
       '/': [
@@ -37,7 +38,9 @@ module.exports = {
       flag: '/img/zh.png'
     }
   },
-
+  markdown: {
+    // lineNumbers: true
+  },
   plugins: [
     [
       '@vuepress/google-analytics',

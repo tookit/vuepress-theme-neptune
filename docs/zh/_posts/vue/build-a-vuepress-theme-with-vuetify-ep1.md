@@ -87,7 +87,7 @@ module.exports = (options, ctx) => {
 [theme-neptune/enhanceApp.js] (https://github.com/tookit/vuepress-theme-neptune/blob/master/theme-neptune/enhanceApp.js)
 
 
-```javascript
+```javascript{4}
 //enhanceApp.js
 import Vuetify, {
   VApp,
