@@ -1,5 +1,5 @@
 ---
-title: 'Build a vuepress theme with vuetify'
+title: '如何使用vuetify2.0创建vuepress主题'
 lang: zh
 category: Vue
 layout: Article
@@ -11,19 +11,20 @@ tags:
 date: '2019-12-12'
 ---
 
-If we want to integrate vuetify with vuepress, we need configure vupress webpack-chain to enable load vuetiy's sass/scss file.
+由于vuetify是使用`sass/scss`样式预处理,所以我们如果想要集成vuetify到vuepress, 我们首先得解决`sass/scss`的加载问题
 
-More details please check
+Vuetify2.0的webpack配置参考
 ([Vuetify quick start](https://vuetifyjs.com/en/getting-started/quick-start/))
 
-## Requirement
+## 环境依赖
 - sass
 - sass-loader
 - fibers
+- vuetify
 
-## Theme Structure
+## 主题目录结构
 
-Just follow the offical doc, how to [Writing a them](https://vuepress.vuejs.org/theme/writing-a-theme.html)
+详情请参考 [Writing a them](https://vuepress.vuejs.org/theme/writing-a-theme.html)
 
 ``` bash
 theme
@@ -44,9 +45,12 @@ theme
 ├── `enhanceApp.js`
 └── package.json
 ```
-## Key Point
+## 关键点
 
-The main issue is to configure webpack-chain to load `sass/scss` file
+我们上面已经谈到了，关键是配置webpack以处理`sass/scss`
+
+完整代码
+[theme-neptune/index.js] (https://github.com/tookit/vuepress-theme-neptune/blob/master/theme-neptune/index.js)
 
 ```javascript
 // theme/index.js
@@ -75,11 +79,16 @@ module.exports = (options, ctx) => {
 
 ```
 
-## Import vuetify
+## 导入vuetify
 
-Import the vuetify components/directives that which we need in the theme
+现在我们可以调整`enhanceApp.js`, 导入我们需要的组件,指令
+
+完整代码
+[theme-neptune/enhanceApp.js] (https://github.com/tookit/vuepress-theme-neptune/blob/master/theme-neptune/enhanceApp.js)
+
 
 ```javascript
+//enhanceApp.js
 import Vuetify, {
   VApp,
   VNavigationDrawer,
