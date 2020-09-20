@@ -1,11 +1,11 @@
 $code-lang: bash,javascript,html,css,php,sh,js
 $code-bg: #2d2d2d
-$code-font-size: .75rem
-$code-line-height: 1.5
-$code-lang-top: 1.5rem
+$code-font-size: 14px
+$code-line-height: 22px
+$code-lang-top: 22px
 $code-font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace
-$code-padding-base: 1.5rem
-$line-wrapper-width: 2.5rem
+$code-padding-base: 22px
+$line-wrapper-width: 44px
 .v-application
   .article
     @each $lang in $code-lang
@@ -43,25 +43,26 @@ $line-wrapper-width: 2.5rem
             position: relative
             z-index: 4
             user-select: none
+            line-height: 22px
       .highlight-lines
         user-select: none
-        padding-top: $code-lang-top - .2rem
+        padding-top: 1.375rem
         // padding-top: 22.6px
         position: absolute
         top: 0
         left: 0
         width: 100%
         .highlighted
-          font-family: $code-font-family
+          // font-family: $code-font-family
           background-color: rgba(0, 0, 0, 30%)      
       &:before
         position: absolute
-        right: 1.5rem
+        right: 22px
         color: #fff
         background:gba(150,150,150,0)       
       pre[class*="language-"]
         background: $code-bg
-        padding: $code-padding-base $code-padding-base   $code-padding-base $line-wrapper-width + 1rem
+        padding: $code-padding-base $code-padding-base   $code-padding-base 64px
         margin:0
         &::before
           position: absolute

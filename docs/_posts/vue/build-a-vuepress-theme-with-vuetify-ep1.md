@@ -48,7 +48,7 @@ theme
 
 The main issue is to configure webpack-chain to load `sass/scss` file
 
-```javascript {4}
+```javascript {4,5,6,9}
 // theme/index.js
 const path = require('path')
 // Theme API.
