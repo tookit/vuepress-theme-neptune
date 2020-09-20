@@ -1,150 +1,83 @@
-
-@import '~prismjs/themes/prism-tomorrow.css'
-// colors
-$accentColor : #3eaf7c
-$textColor : #2c3e50
-$borderColor : #eaecef
-$codeBgColor : #282c34
-$arrowBgColor : #ccc
-$contentClass : '.article'
-// code
-$lineNumbersWrapperWidth : 2.5rem
-$codeLang : js, ts, html, md, vue, css, sass, scss, less, stylus, go, java, c, sh
-
-.article
-  code
-    color: $code-color
-    padding: 0.25rem 0.5rem
-    margin: 0
-    font-size: 0.75em
-    background-color: $code-background-color
-    border-radius: 3px
-    .token
-      &.deleted
-        color: #EC5975
-      &.inserted
-        color: $accentColor
-
-.article
-  pre, pre[class*="language-"]
-    line-height: 1.4
-    padding: 1.25rem 1.5rem
-    margin: 0.85rem 0
-    background-color: $codeBgColor
-    border-radius: 6px
-    overflow: auto
-    code
-      color: #fff
-      padding: 0
-      background-color: transparent
-      border-radius: 0
-
-div [class*="language-"]
-  position: relative
-  background-color: $codeBgColor
-  border-radius: 6px
-  .highlight-lines
-    user-select: none
-    padding-top: 1.3rem
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    line-height: 1.4
-    .highlighted
-      background-color: rgba(0, 0, 0, 30%)
-  pre, pre [class*="language-"]
-    background: transparent
-    position: relative
-    z-index: 1
-  &::before
-    position: absolute
-    z-index: 3
-    top: 0.8em
-    right: 1em
-    font-size: 0.8rem
-    color: rgba(150,150,150,.7)
-  &:not(.line-numbers-mode)
-    .line-numbers-wrapper
-      display: none
-  &.line-numbers-mode
-    .highlight-lines .highlighted
+$code-lang: bash,javascript,html,css,php,sh,js
+$code-bg: #2d2d2d
+$code-font-size: .75rem
+$code-line-height: 1.5
+$code-lang-top: 1.5rem
+$code-font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace
+$code-padding-base: 1.5rem
+$line-wrapper-width: 2.5rem
+.v-application
+  .article
+    @each $lang in $code-lang
+      div[class~="language-#{$lang}"]
+        &:before
+          content: "#{$lang}"
+               
+    div[class*="language-"]
       position: relative
-      &:before
-        content: ' '
+      &:not(.line-numbers-mode)
+        .line-numbers-wrapper
+          display: none
+      &.line-numbers-mode
+        .line-numbers-wrapper
+          position: absolute
+          top: 0
+          left: 0
+          line-height: 1.5
+          width: $line-wrapper-width
+          text-align: center
+          color: rgba(127, 127, 127, .5)
+          padding: $code-lang-top 0
+          &::after
+            content: ""
+            position: absolute
+            z-index: 2
+            top: 0
+            left: 0
+            width: $line-wrapper-width
+            height: 100%
+            border-right: 1px solid rgba(127, 127, 127, .5)
+          br
+            user-select: none
+          .line-number
+            position: relative
+            z-index: 4
+            user-select: none
+      .highlight-lines
+        user-select: none
+        padding-top: $code-lang-top - .2rem
+        // padding-top: 22.6px
         position: absolute
-        z-index: 3
-        left: 0
         top: 0
-        display: block
-        width: $lineNumbersWrapperWidth
-        height: 100%
-        background-color: rgba(0, 0, 0, 30%)
-    pre
-      padding-left: $lineNumbersWrapperWidth + 1 rem
-      vertical-align: middle
-    .line-numbers-wrapper
-      position: absolute
-      top: 0
-      width: $lineNumbersWrapperWidth
-      text-align: center
-      color: rgba(127, 127, 127, .5)
-      padding: 1.25rem 0
-      line-height: 1.4
-      br
-        user-select: none
-      .line-number
-        position: relative
-        z-index: 4
-        user-select: none
-        font-size: 0.85em
-    &::after
-      content: ''
-      position: absolute
-      z-index: 2
-      top: 0
-      left: 0
-      width: $lineNumbersWrapperWidth
-      height: 100%
-      border-radius: 6px 0 0 6px
-      border-right: 1px solid var(--borderColor)
-      background-color: var(--codeBg)
-
-// @each $lang in $codeLang
-//   div'[class~="language-' + $lang + '"]'
-//   &:before
-//     content: ('' + $lang)
-div[class~="language-css"]
-  &:before
-    content: "css"
-
-div[class~="language-javascript"]
-  &:before
-    content: "js"
-
-div[class~="language-typescript"]
-  &:before
-    content: "ts"
-
-div[class~="language-markup"]
-  &:before
-    content: "html"
-
-div[class~="language-markdown"]
-  &:before
-    content: "md"
-
-div[class~="language-json"]:before
-    content: "json"
-
-div[class~="language-ruby"]:before
-    content: "rb"
-
-div[class~="language-python"]:before
-    content: "py"
-
-div[class~="language-bash"]:before
-    content: "sh"
-
-div[class~="language-php"]:before
-    content: "php"
+        left: 0
+        width: 100%
+        .highlighted
+          font-family: $code-font-family
+          background-color: rgba(0, 0, 0, 30%)      
+      &:before
+        position: absolute
+        right: 1.5rem
+        color: #fff
+        background:gba(150,150,150,0)       
+      pre[class*="language-"]
+        background: $code-bg
+        padding: $code-padding-base $code-padding-base   $code-padding-base $line-wrapper-width + 1rem
+        margin:0
+        &::before
+          position: absolute
+          z-index: 3
+          top: $code-lang-top
+          right: $code-padding-base
+          font-size: $code-font-size
+          color: rgba(150,150,150,.7)                 
+        code
+          background-color: rgb(255 255 255 / 0%) !important
+          color: rgb(255 255 255 / 70%)
+          font-size: $code-font-size
+          font-family: $code-font-family
+          text-align: left
+          white-space: pre
+          word-spacing: normal
+          word-break: normal
+          word-wrap: normal
+          line-height: $code-line-height

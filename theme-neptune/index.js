@@ -11,7 +11,9 @@ module.exports = (options, ctx) => {
     )
 
   return {
-    configureWebpack: (config) => {},
+    configureWebpack: (config) => {
+      console.log('here')
+    },
     chainWebpack: (config) => {
       config.module
         .rule('sass')
@@ -22,9 +24,14 @@ module.exports = (options, ctx) => {
           implementation: require('sass'),
           sassOptions: {
             fiber: require('fibers'),
-            indentedSyntax: true // optional
+            indentedSyntax: true, // optional
+            additionalData: "@import '@/style/variable.scss';"
           }
         })
+        .end()
+        .rule('sass')
+        .test(/.sass$/)
+        .exclude.add(/node_modules\/vuetify\/src\/elements\/_code.sass/)
         .end()
     },
     alias() {
