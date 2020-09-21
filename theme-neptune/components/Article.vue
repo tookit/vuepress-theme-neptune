@@ -8,7 +8,7 @@
           </h2>
         </v-toolbar-title>
         <v-spacer />
-        <v-btn icon>
+        <v-btn icon @click="window.history.go(-1)">
           <v-icon>mdi-arrow-left</v-icon>
         </v-btn>
         <div slot="extension" class="post-meta">
@@ -109,6 +109,7 @@ export default {
         return (
           frontmatter.category === this.$frontmatter.category &&
           frontmatter.layout !== 'Category' &&
+          this.$lang === frontmatter.lang &&
           page.key !== this.$page.key
         )
       })
