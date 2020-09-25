@@ -18,13 +18,15 @@ Base my personal experience, I prefer test driven development by laravel. Before
 - Configure phpunit test
 - prepare the data schema
 
-## Create test test
+## Login Test
 
 ```bash
     php artisan make:test LoginTest
 ```
 
 ## TDD
+
+Let us start with test driving development
 
 ``` php
 
@@ -61,18 +63,24 @@ class LoginTest extends TestCase
 
 ```
 
-## Review the test code,  we need to prepare something first
+## Related code
+
+We need create a `User` model, and define the factory method so we can generate the test data we need, at last we also need to define
+the api end point `/api/auth/login`
 
 - The User Model/Migration
 - The User Model factory definition
 - The API end point `/api/auth/login`
 
 
-## Configure user model for tymon/jwt-auth
+## tymon/jwt-auth
+
+In this case, I will use [tymon/jwt-auth](https://jwt-auth.readthedocs.io/en/develop/quick-start) to implement a basic token based authentication
+
+More details [https://jwt-auth.readthedocs.io/en/develop/quick-start/](https://jwt-auth.readthedocs.io/en/develop/quick-start/)
 
 implement `Tymon\JWTAuth\Contracts\JWTSubject`
 
-More details [https://jwt-auth.readthedocs.io/en/develop/quick-start/](https://jwt-auth.readthedocs.io/en/develop/quick-start/)
 
 ## step 1. run migration to create the database schema we need
 
