@@ -3,13 +3,8 @@
     <v-subheader>{{ $vuetify.lang.t('$vuetify.toc.title') }}</v-subheader>
     <v-divider />
     <slot name="top" />
-    <v-list class="toc_list">
-      <v-list-item
-        class="toc_list__item"
-        v-for="item in $page.headers"
-        :key="item.slug"
-        :to="computeHash(item.slug)"
-      >
+    <v-list dense class="toc_list">
+      <v-list-item class="toc_list__item" v-for="item in $page.headers" :key="item.slug" :to="computeHash(item.slug)">
         <span class="toc_list__item__title">
           {{ item.title }}
         </span>
@@ -19,13 +14,13 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {}
   },
 
   methods: {
-    findActiveIndex() {},
-    computeHash(slug) {
+    findActiveIndex () { },
+    computeHash (slug) {
       return {
         path: this.$route.path,
         hash: slug

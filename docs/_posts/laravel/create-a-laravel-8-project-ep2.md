@@ -82,15 +82,18 @@ More details [https://jwt-auth.readthedocs.io/en/develop/quick-start/](https://j
 implement `Tymon\JWTAuth\Contracts\JWTSubject`
 
 
-## step 1. run migration to create the database schema we need
+## step 1. run migration 
 
+run migration  to create the database schema we need
 
 ```bash
 php artisan migrate
 
 ```
 
-## step 2. make seeder to generate sample data,
+## step 2. make seeder 
+
+make seeder to generate the sample data we need
 
 ```bash
 php artisan make:seeder UserSeeder
